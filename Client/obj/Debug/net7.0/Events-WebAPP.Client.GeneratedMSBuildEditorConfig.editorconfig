@@ -20,8 +20,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/auth/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYXV0aC9Mb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/auth/LogOut.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYXV0aC9Mb2dPdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/auth/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYXV0aC9SZWdpc3Rlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Counter.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Events.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/FetchData.razor]
@@ -30,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Users.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvVXNlcnMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Shared/SurveyPrompt.razor]

@@ -1,0 +1,36 @@
+@page "/register"
+<h3>Register</h3>
+
+<EditForm Model="@user" OnValidSubmit="@HandleValidRequest" OnInvalidSubmit="@HandleFailedRequest">
+    <div class="form-goup">
+        <label for="username">Username:</label>
+        <InputText class="form-control" @bind-Value="@user.Username" ></InputText>
+    </div>
+    <div class="form-goup">
+        <label for="password">Password:</label>
+        <InputText class="form-control" @bind-Value="@user.Password" ></InputText>
+    </div>
+    <div class="form-goup">
+        <label for="email">Email:</label>
+        <InputText  class="form-control" @bind-Value="@user.Email" ></InputText>
+    </div>
+    <div class="form-goup">
+        <label for="phone_number">Phone Number:</label>
+        <InputText class="form-control" @bind-Value="@user.PhoneNumber" ></InputText>
+    </div>
+    <div class="form-goup"> 
+        <label for="role">Role:</label> 
+        <InputSelect @bind-Value="@user.Role">
+            <option value="Organizer">Organizer</option>
+            <option value="Participant">Participant</option>
+        </InputSelect>
+    </div>
+    <div class="form-goup">
+        <button type="submit" class="btn btn-warning">Create User</button>
+        <a @onclick="@GoToLogin" class ="btn btn-primary">Back</a>
+    </div>
+    <div>
+        <p>@Message</p>
+    </div>
+    
+</EditForm>

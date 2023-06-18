@@ -1,0 +1,37 @@
+@page "/Events"
+<PageTitle>Eventos</PageTitle>
+
+<h3>Events</h3>
+
+<table class="table">
+    <thead>
+    <tr>    
+        <th>
+            ID
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Name
+        </th>
+            
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in _envents)
+        {
+            <tr>
+                <td>
+                    @item.EventId
+                </td>
+                <td>
+                    @item.Location
+                </td>
+                <td>
+                    @item.Name
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
