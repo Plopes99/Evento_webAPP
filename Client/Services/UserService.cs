@@ -4,27 +4,27 @@ using Events_WebAPP.Server;
 
 namespace Events_WebAPP.Client.Services;
 
-public class EventService:IEventService
+public class UserService:IUserService
 {
     private readonly HttpClient _httpClient;
 
-    public EventService(HttpClient httpClient)
+    public UserService(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
     
-    public async Task<IEnumerable<Event>?> All()
+    public async Task<IEnumerable<User>?> All()
     {
         try
         {
-            var apiResponse = await _httpClient.GetStreamAsync("api/Events");
+            var apiResponse = await _httpClient.GetStreamAsync("api/Users");
 
-            var eventos = await JsonSerializer.DeserializeAsync<IEnumerable<Event>>(apiResponse, new JsonSerializerOptions 
+            var users = await JsonSerializer.DeserializeAsync<IEnumerable<User>>(apiResponse, new JsonSerializerOptions 
             {
                 PropertyNameCaseInsensitive = true
             });
 
-            return eventos;
+            return users;
 
         }
         catch (Exception e)
@@ -34,18 +34,18 @@ public class EventService:IEventService
         }
     }
 
-    public async Task<Event?> GetEvent(int id)
+    public async Task<User?> GetUser(int id)
     {
         try
         {
-            var apiResponse = await _httpClient.GetStreamAsync($"api/Events/{id}");
+            var apiResponse = await _httpClient.GetStreamAsync($"api/Users/{id}");
 
-            var evento = await JsonSerializer.DeserializeAsync<Event>(apiResponse, new JsonSerializerOptions()
+            var user = await JsonSerializer.DeserializeAsync<User>(apiResponse, new JsonSerializerOptions()
             {
                 PropertyNameCaseInsensitive = true
             });
 
-            return evento;
+            return user;
         }
         catch (Exception e)
         {
@@ -54,24 +54,26 @@ public class EventService:IEventService
         }
     }
 
-    public async Task<Event?> AddEvent(Event evento)
+
+
+    public async Task<User?> AddUser(User user)
     {
         try
         {
-            var itemJson = new StringContent(JsonSerializer.Serialize(evento), Encoding.UTF8, "application/json");
+            var itemJson = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("api/Events", itemJson);
+            var response = await _httpClient.PostAsync("api/Users", itemJson);
 
             if (response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStreamAsync();
 
-                var addedEvent = await JsonSerializer.DeserializeAsync<Event>(responseBody, new JsonSerializerOptions
+                var addedUser = await JsonSerializer.DeserializeAsync<User>(responseBody, new JsonSerializerOptions
                 {
                     PropertyNameCaseInsensitive = true
                 });
 
-                return addedEvent;
+                return addedUser;
             }
 
             return null;
@@ -83,13 +85,13 @@ public class EventService:IEventService
         }
     }
 
-    public async Task<bool> Update(Event evento)
+    public async Task<bool> Update(User user)
     {
         try
         {
-            var itemJson = new StringContent(JsonSerializer.Serialize(evento), Encoding.UTF8, "application/json");
+            var itemJson = new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PutAsync($"api/Events/{evento.EventId}", itemJson);
+            var response = await _httpClient.PutAsync($"api/Events/{user.UserId}", itemJson);
 
             return response.IsSuccessStatusCode;
         }
@@ -104,7 +106,7 @@ public class EventService:IEventService
     {
         try
         {
-            var response = await _httpClient.DeleteAsync($"api/Events/{id}");
+            var response = await _httpClient.DeleteAsync($"api/Users/{id}");
 
             return response.IsSuccessStatusCode;
         }

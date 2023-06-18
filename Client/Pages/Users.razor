@@ -31,9 +31,15 @@
             loginErrorMessage = "Please enter both username and password.";
             return;
         }
+        else
+        {
+            count = _users.Count();
+            Teste = count.ToString();
+            Console.WriteLine(Teste);
+            return;
+        }
         
-        count = _users.Count();
-        loginErrorMessage = count.ToString();
+        
         
        
         }

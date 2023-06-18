@@ -4,7 +4,7 @@ using Events_WebAPP.Server;
 
 namespace Events_WebAPP.Client.Pages;
 
-public class Users:ComponentBase
+public partial class Users
 {
     [Inject]
     private IUserService userService {get; set;}

@@ -211,14 +211,14 @@
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
       "Events-WebAPP.Shared.dll": "sha256-Us3E9DONEqvyldT+iQbFg50SlK0tLbwLPww8MkzEInI=",
-      "Events-WebAPP.Client.dll": "sha256-Zzfn8D5yfix4irXwJAcVx+58vKFTiFb2CIqdeq3iC6I="
+      "Events-WebAPP.Client.dll": "sha256-SvSbsRrD+z5XhaRtqchUAj66ezh9bfUetEomP5xUKZE="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
       "Events-WebAPP.Shared.pdb": "sha256-7AO+17pMUn6ezPVqaQkxaSSqPlmcichk1l\/gg4SAdN8=",
-      "Events-WebAPP.Client.pdb": "sha256-AphxCWtvt4WdXEV\/JB7Hoa3Ol7vsfl0grujW5ms1tFs="
+      "Events-WebAPP.Client.pdb": "sha256-vvc5buzzqS7kpLspXU4Cfwv3vowY4LwmqzNJ3uDZO9g="
     },
     "runtime": {
       "dotnet.7.0.5.m5bpfkyls6.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",
