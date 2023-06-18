@@ -1,0 +1,14 @@
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/bin/Debug/net7.0/Events-WebAPP.Shared.deps.json
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/bin/Debug/net7.0/Events-WebAPP.Shared.dll
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/bin/Debug/net7.0/Events-WebAPP.Shared.pdb
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.csproj.AssemblyReference.cache
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.GeneratedMSBuildEditorConfig.editorconfig
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.AssemblyInfoInputs.cache
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.AssemblyInfo.cs
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.csproj.CoreCompileInputs.cache
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.dll
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/refint/Events-WebAPP.Shared.dll
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.pdb
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/ref/Events-WebAPP.Shared.dll
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/bin/Debug/net7.0/Events-WebAPP.Shared.runtimeconfig.json
+/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/obj/Debug/net7.0/Events-WebAPP.Shared.genruntimeconfig.cache
