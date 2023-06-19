@@ -1,8 +1,21 @@
 @page "/Events"
-<PageTitle>Eventos</PageTitle>
+
+@if (SessionId.user != null)
+{
+    if (SessionId.user.Role.Equals("Participant"))
+    {
+        <PageTitle>Menu Participante</PageTitle>
+    }
+    else
+    {
+        <PageTitle>Menu Organizer</PageTitle>
+    }
+}
 
 <h3>Events</h3>
-
+<div>
+    <a href="@($"Eventdetails")" class="btn btn-success">Add Event</a>
+</div>
 <table class="table">
     <thead>
     <tr>    
@@ -14,6 +27,9 @@
         </th>
         <th>
             Name
+        </th>
+        <th>
+            Manage
         </th>
             
     </tr>
@@ -30,6 +46,9 @@
                 </td>
                 <td>
                     @item.Name
+                </td>
+                <td>
+                    <a href="@($"Eventdetails/{item.EventId}")" class="btn btn-danger">Edit</a>
                 </td>
             </tr>
         }

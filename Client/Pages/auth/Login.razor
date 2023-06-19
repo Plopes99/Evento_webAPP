@@ -18,6 +18,8 @@
 <p>@Message</p>
 
 
+
+
 @code {
     private string Username { get; set; }
     private string Password { get; set; }
@@ -25,7 +27,7 @@
     private bool LoginError { get; set; }
     private string Message { get; set; }
 
-    private void LoginUser()
+    private async void LoginUser()
     {
         if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Password))
         {
@@ -39,8 +41,8 @@
                 if (i.Username.Equals(Username) && i.Password.Equals(Password))
                 {
                     Message = "Sucesso!";
+                    SessionId.user = i;
                     return;
-                    //completar com navegação
                 }
                 else
                 {

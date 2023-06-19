@@ -1,0 +1,65 @@
+@page "/Eventdetails"
+@page "/Eventdetails/{id}"
+
+
+@if (string.IsNullOrEmpty(Id))
+{
+    <PageTitle>Add new Event</PageTitle>
+    <h1>Add new Event</h1>
+}
+else
+{
+    <PageTitle>Manager Event</PageTitle>
+    <h1>Manage Event</h1>
+}
+    
+    
+    <div class="row">
+        <EditForm Model="@evento" OnValidSubmit="HandleValidRequest" OnInvalidSubmit="@HandleFailedRequest">
+            <div>
+                <label for="name">Name:</label>
+                <InputText id="name" class="form-control" @bind-Value="@evento.Name" />
+            </div>
+        
+            <div>
+                <label for="date">Date:</label>
+                <InputDate id="date" class="form-control" @bind-Value="@evento.Date" />
+            </div>
+        
+
+        
+            <div>
+                <label for="location">Location:</label>
+                <InputText id="location" class="form-control" @bind-Value="@evento.Location" />
+            </div>
+        
+            <div>
+                <label for="description">Description:</label>
+                <InputTextArea id="description" class="form-control" @bind-Value="@evento.Description" />
+            </div>
+        
+            <div>
+                <label for="maxCapacity">Max Capacity:</label>
+                <InputNumber id="maxCapacity" class="form-control" @bind-Value="@evento.MaxCapacity" />
+            </div>
+        
+            <div>
+                <label for="ticketPrice">Ticket Price:</label>
+                <InputNumber id="ticketPrice" class="form-control" step="0.01" @bind-Value="@evento.TicketPrice" />
+            </div>
+        
+            <button type="submit" class="btn btn-primary">Save</button>
+            <a @onclick="GoToEvents" class="btn btn-danger">Back</a>
+            
+            @if (!string.IsNullOrEmpty(Id))
+            {
+                <a @onclick="@DeleteEvent" class="btn btn-warning">Delete</a>
+            }
+            
+            <div>
+                <p style="color: red">@Message</p>
+            </div>
+        </EditForm>
+
+
+    </div>

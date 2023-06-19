@@ -71,7 +71,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/plopes/.dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

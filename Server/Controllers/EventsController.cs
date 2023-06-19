@@ -54,10 +54,12 @@ public class EventsController: ControllerBase
             return NotFound();
         }
 
+        TimeOnly time = TimeOnly.FromDateTime(DateTime.Now);
+        
         eventExist.EventId = evento.EventId;
         eventExist.Date = evento.Date;
         eventExist.Description = evento.Description;
-        eventExist.Time = evento.Time;
+        eventExist.Time = time;
         eventExist.Location = evento.Location;
         eventExist.Name = evento.Name;
         eventExist.MaxCapacity = evento.MaxCapacity;

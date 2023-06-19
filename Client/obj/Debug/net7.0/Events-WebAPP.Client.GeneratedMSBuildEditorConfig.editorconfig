@@ -32,20 +32,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvYXV0aC9SZWdpc3Rlci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQ291bnRlci5yYXpvcg==
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/EditUser.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdFVzZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/EventDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnREZXRhaWxzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Events.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXZlbnRzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/FetchData.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRmV0Y2hEYXRhLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/SearchEvent.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvU2VhcmNoRXZlbnQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Client/Pages/Users.razor]
