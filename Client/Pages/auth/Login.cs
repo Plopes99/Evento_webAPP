@@ -22,5 +22,10 @@ public partial class Login
         }
     }
 
+    protected void goToHome()
+    {
+        navigationManager.NavigateTo("/Home");
+    }
+
    
 }

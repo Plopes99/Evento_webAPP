@@ -25,4 +25,9 @@
     <ProjectReference Include="..\Shared\Events-WebAPP.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="Pages\Counter.razor" />
+    <Content Remove="Pages\FetchData.razor" />
+  </ItemGroup>
+
 </Project>

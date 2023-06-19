@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "gh150H4CvzCOMLrupMqtvMwRxlKBlYu9iIAtmjiKWxarOygHHeSnFTNr0SvjeUvbkZVEnaQBayWd4+6c+W59QQ==",
+  "dgSpecHash": "zuCNgIUr0uQDJzpwsHTGL1wmUeZAX4R5QDDSHAcdxUnwWIe89CQ5I6sOwFSgR9K2/nM/9hTJSkESmbx6QaHzPg==",
   "success": true,
   "projectFilePath": "/Users/plopes/RiderProjects/TP_ESII_Blazor/Events-WebAPP/Shared/Events-WebAPP.Shared.csproj",
   "expectedPackageFiles": [
