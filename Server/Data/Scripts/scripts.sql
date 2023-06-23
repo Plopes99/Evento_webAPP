@@ -44,3 +44,56 @@ VALUES
      docker run --name es2-db -p 5432:5432 -e POSTGRES_PASSWORD=es2 -e 
      POSTGRES_USER=es2 -e POSTGRES_DB=es2 -d postgres
 */
+
+
+
+
+-- Script para criar a tabela "Registrations"
+CREATE TABLE Registrations (
+                               registration_id SERIAL PRIMARY KEY,
+                               event_id INTEGER REFERENCES Events(event_id),
+                               participant_id INTEGER REFERENCES Users(user_id)
+);
+
+-- Script para inserir dados na tabela "Registrations"
+INSERT INTO Registrations (event_id, participant_id)
+VALUES
+    (1, 1), -- Exemplo de registro para o evento com event_id = 1 e o participante com participant_id = 1
+    (2, 1), -- Exemplo de registro para o evento com event_id = 2 e o participante com participant_id = 1
+    (2, 2); -- Exemplo de registro para o evento com event_id = 2 e o participante com participant_id = 2
+
+
+
+
+CREATE TABLE Activities (
+                            activity_id SERIAL PRIMARY KEY,
+                            event_id INTEGER REFERENCES Events(event_id),
+                            name VARCHAR(255) NOT NULL,
+                            date DATE NOT NULL,
+                            time TIME NOT NULL,
+                            description TEXT
+);
+
+-- Query para inserir dados na tabela "Activities"
+INSERT INTO Activities (event_id, name, date, time, description)
+VALUES
+    (1, 'Atividade 1', '2023-06-01', '10:00:00', 'Descrição da Atividade 1'), -- Exemplo de atividade para o evento com event_id = 1
+    (1, 'Atividade 2', '2023-06-02', '14:30:00', 'Descrição da Atividade 2'), -- Exemplo de atividade para o evento com event_id = 1
+    (2, 'Atividade 1', '2023-06-03', '09:00:00', 'Descrição da Atividade 1'); -- Exemplo de atividade para o evento com event_id = 2
+
+
+-- Script para criar a tabela "Tickets"
+CREATE TABLE Tickets (
+                         ticket_id SERIAL PRIMARY KEY,
+                         event_id INTEGER REFERENCES Events(event_id),
+                         ticket_type VARCHAR(255) NOT NULL,
+                         quantity_available INTEGER NOT NULL
+);
+
+-- Query para inserir dados na tabela "Tickets"
+INSERT INTO Tickets (event_id, ticket_type, quantity_available)
+VALUES
+    (1, 'Entrada Normal', 100), -- Exemplo de ingresso para o evento com event_id = 1
+    (1, 'Entrada VIP', 50), -- Exemplo de ingresso para o evento com event_id = 1
+    (2, 'Ingresso Padrão', 200), -- Exemplo de ingresso para o evento com event_id = 2
+    (2, 'Ingresso Premium', 100); -- Exemplo de ingresso para o evento com event_id = 2

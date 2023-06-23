@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Events_WebAPP.Server;
 using Microsoft.EntityFrameworkCore;
 
 namespace Events_WebAPP.Server.Data;
@@ -15,7 +16,13 @@ public partial class ApiDbContext : DbContext
     {
     }
 
+    public virtual DbSet<Activity> Activities { get; set; }
+
     public virtual DbSet<Event> Events { get; set; }
+
+    public virtual DbSet<Registration> Registrations { get; set; }
+
+    public virtual DbSet<Ticket> Tickets { get; set; }
 
     public virtual DbSet<User> Users { get; set; }
 
@@ -25,6 +32,26 @@ public partial class ApiDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Activity>(entity =>
+        {
+            entity.HasKey(e => e.ActivityId).HasName("activities_pkey");
+
+            entity.ToTable("activities");
+
+            entity.Property(e => e.ActivityId).HasColumnName("activity_id");
+            entity.Property(e => e.Date).HasColumnName("date");
+            entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.EventId).HasColumnName("event_id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(255)
+                .HasColumnName("name");
+            entity.Property(e => e.Time).HasColumnName("time");
+
+            entity.HasOne(d => d.Event).WithMany(p => p.Activities)
+                .HasForeignKey(d => d.EventId)
+                .HasConstraintName("activities_event_id_fkey");
+        });
+
         modelBuilder.Entity<Event>(entity =>
         {
             entity.HasKey(e => e.EventId).HasName("events_pkey");
@@ -50,6 +77,43 @@ public partial class ApiDbContext : DbContext
             entity.HasOne(d => d.Organizer).WithMany(p => p.Events)
                 .HasForeignKey(d => d.OrganizerId)
                 .HasConstraintName("events_organizer_id_fkey");
+        });
+
+        modelBuilder.Entity<Registration>(entity =>
+        {
+            entity.HasKey(e => e.RegistrationId).HasName("registrations_pkey");
+
+            entity.ToTable("registrations");
+
+            entity.Property(e => e.RegistrationId).HasColumnName("registration_id");
+            entity.Property(e => e.EvtId).HasColumnName("evt_id");
+            entity.Property(e => e.ParticipantId).HasColumnName("participant_id");
+
+            entity.HasOne(d => d.Evt).WithMany(p => p.Registrations)
+                .HasForeignKey(d => d.EvtId)
+                .HasConstraintName("registrations_evt_id_fkey");
+
+            entity.HasOne(d => d.Participant).WithMany(p => p.Registrations)
+                .HasForeignKey(d => d.ParticipantId)
+                .HasConstraintName("registrations_participant_id_fkey");
+        });
+
+        modelBuilder.Entity<Ticket>(entity =>
+        {
+            entity.HasKey(e => e.TicketId).HasName("tickets_pkey");
+
+            entity.ToTable("tickets");
+
+            entity.Property(e => e.TicketId).HasColumnName("ticket_id");
+            entity.Property(e => e.EventId).HasColumnName("event_id");
+            entity.Property(e => e.QuantityAvailable).HasColumnName("quantity_available");
+            entity.Property(e => e.TicketType)
+                .HasMaxLength(255)
+                .HasColumnName("ticket_type");
+
+            entity.HasOne(d => d.Event).WithMany(p => p.Tickets)
+                .HasForeignKey(d => d.EventId)
+                .HasConstraintName("tickets_event_id_fkey");
         });
 
         modelBuilder.Entity<User>(entity =>
