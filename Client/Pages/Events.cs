@@ -10,6 +10,8 @@ public partial class Events
     private IEventService eventService {get; set;}
 
     public IEnumerable<Event> _envents { get; set; } = new List<Event>();
+    
+    private NavigationManager navigationManager { get; set; }
 
     protected async override Task OnInitializedAsync()
     {
@@ -19,5 +21,10 @@ public partial class Events
         {
             _envents = apiEvents;
         }
+    }
+    
+    private void GoToLogin()
+    {
+        navigationManager.NavigateTo("/Login");
     }
 }

@@ -12,9 +12,9 @@ else
     <PageTitle>Manager Event</PageTitle>
     <h1>Manage Event</h1>
 }
+
     
-    
-    <div class="row">
+<div class="row">
         <EditForm Model="@evento" OnValidSubmit="HandleValidRequest" OnInvalidSubmit="@HandleFailedRequest">
             <div>
                 <label for="name">Name:</label>
@@ -60,6 +60,4 @@ else
                 <p style="color: red">@Message</p>
             </div>
         </EditForm>
-
-
-    </div>
+</div>

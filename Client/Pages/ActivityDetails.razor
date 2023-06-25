@@ -1,0 +1,43 @@
+@page "/Activitydetails/{id}"
+
+<h3>ActivityDetails</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Descrição
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in _activities)
+    {
+        <tr>
+            <td>
+                @item.ActivityId
+            </td>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.Date
+            </td>
+            <td>
+                @item.Description
+            </td>
+            <a @onclick="GoToEvents" class="btn btn-danger">Back</a>
+        </tr>
+    }
+    </tbody>
+</table>

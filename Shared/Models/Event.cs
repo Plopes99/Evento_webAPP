@@ -23,5 +23,11 @@ public partial class Event
 
     public decimal TicketPrice { get; set; }
 
+    public virtual ICollection<Activity> Activities { get; set; } = new List<Activity>();
+
     public virtual User? Organizer { get; set; }
+
+    public virtual ICollection<Registration> Registrations { get; set; } = new List<Registration>();
+
+    public virtual ICollection<Ticket> Tickets { get; set; } = new List<Ticket>();
 }
