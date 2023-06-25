@@ -1,0 +1,58 @@
+@page "/RegistrationsDetails"
+
+@if (SessionId.user != null)
+{
+    <h3>Logado como @SessionId.user.Username</h3>
+}
+else
+{
+    <h3>Login não efetuado</h3>
+    GoToLogin();
+}
+<h3>Registration</h3>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            ID
+        </th>
+        <th>
+            Location
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Manage
+        </th>
+
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in _regists)
+    {
+        <tr>
+            <td>
+                @if (item.ParticipantId == SessionId.user.UserId)
+                {
+                    @item.RegistrationId
+                }
+            </td>
+            <td>
+                @foreach (var i in _events)
+                {
+                    if (item.ParticipantId == i.EventId && i.Name != null && item.ParticipantId == SessionId.user.UserId)
+                    {
+                        @i.Name
+                    }
+                    else
+                    {
+                        @("null");
+                    }
+                }
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

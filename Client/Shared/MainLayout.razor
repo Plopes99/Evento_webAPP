@@ -1,4 +1,5 @@
 ﻿
+@using Events_WebAPP.Client.Pages
 @inherits LayoutComponentBase
 
 <div class="page">
@@ -8,8 +9,16 @@
 
     <main>
         <div class="top-row px-4">
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            <a href="Login" class="btn btn-warning"> Login</a>
         </div>
+        
+        @if (SessionId.user != null)
+        {
+            <div class="top-row px-4">
+                Logged as: @SessionId.user.Username
+                <a href="Login" class="btn btn-warning"> LoOut</a>
+            </div>
+        }
 
         <article class="content px-4">
             @Body

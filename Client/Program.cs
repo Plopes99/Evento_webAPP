@@ -19,4 +19,6 @@ builder.Services.AddScoped<IRegistrationService, RegistrationService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<IActivityService, ActivityService>();
 
+SessionId user = new SessionId();
+
 await builder.Build().RunAsync();

@@ -45,6 +45,11 @@ public partial class EventDetails
     {
         navigationManagger.NavigateTo("/Events");
     }
+    private void GoToLogin()
+    {
+        navigationManagger.NavigateTo("/Login");
+    }
+    
 
     private void HandleFailedRequest()
     {

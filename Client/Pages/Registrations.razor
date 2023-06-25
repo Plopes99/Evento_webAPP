@@ -1,0 +1,22 @@
+@page "/Registrations/{id}"
+
+<h3>Página de Confirmação</h3>
+
+<p>Tem certeza de que deseja prosseguir?</p>
+
+<button class="btn btn-primary" @onclick="Confirm">Confirmar</button>
+<button class="btn btn-secondary" @onclick="Cancelar">Cancelar</button>
+
+@code {
+    private void Confirm()
+    {
+        // Ação a ser executada quando o usuário confirmar
+        AddRegistration();
+    }
+
+    private void Cancelar()
+    {
+        // Ação a ser executada quando o usuário cancelar
+        GoToEvents();
+    }
+}

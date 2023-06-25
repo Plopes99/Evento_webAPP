@@ -1,40 +1,44 @@
 @page "/Events"
+@using Events_WebAPP.Server
 
 @if (SessionId.user != null)
 {
-    if (SessionId.user.Role.Equals("Participant"))
+    <h3>Logado como @SessionId.user.Username</h3>
+                                            
+                                            
+                                            
+    <h3>Events</h3>
+    if (SessionId.user.Role.Equals("organizer"))
     {
-        <PageTitle>Menu Participante</PageTitle>
+        <h4>Organizer Menu</h4>
+        <div>
+            <a href="@($"Eventdetails")" class="btn btn-success">Add Event</a>
+        </div>
     }
     else
     {
-        <PageTitle>Menu Organizer</PageTitle>
+        <h4>Participant Menu</h4>
     }
-}
-
-<h3>Events</h3>
-<div>
-    <a href="@($"Eventdetails")" class="btn btn-success">Add Event</a>
-</div>
-<table class="table">
-    <thead>
-    <tr>    
-        <th>
-            ID
-        </th>
-        <th>
-            Location
-        </th>
-        <th>
-            Name
-        </th>
-        <th>
-            Manage
-        </th>
+ 
+    <table class="table">
+        <thead>
+        <tr>    
+            <th>
+                ID
+            </th>
+            <th>
+                Location
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Manage
+            </th>
             
-    </tr>
-    </thead>
-    <tbody>
+        </tr>
+        </thead>
+        <tbody>
         @foreach (var item in _envents)
         {
             <tr>
@@ -48,9 +52,30 @@
                     @item.Name
                 </td>
                 <td>
-                    <a href="@($"Eventdetails/{item.EventId}")" class="btn btn-danger">Edit</a>
+                    @if (SessionId.user.Role.Equals("organizer"))
+                    {
+                        <a href="@($"Activity/{item.EventId}")" class="btn btn-warning"> Add Activity</a>
+                        <a href="@($"Eventdetails/{item.EventId}")" class="btn btn-danger">Edit</a>
+                        <a href="@($"ActivityDetails/{item.EventId}")" class="btn btn-warning">All Activities</a>
+                                                                                          
+                    }
+                    else
+                    {
+                        <a href="@($"Registrations/{item.EventId}")" class="btn btn-warning"> Registrar</a>
+                        <a href="@($"ActivityDetails/{item.EventId}")" class="btn btn-warning">All Activities</a>
+
+                    }
                 </td>
             </tr>
         }
-    </tbody>
-</table>
+        </tbody>
+    </table>
+}
+else
+{
+    <h3>Login não efetuado</h3>
+    <NavLink class="nav-link" href="Login">
+        <span class="oi oi-list-car" aria-hidden="true"></span> Login
+    </NavLink>
+}
+
